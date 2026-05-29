@@ -8,8 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { AuthService } from '@app/core/services/auth.service';
-import { StorageService } from '@app/core/services/storage.service';
+import { AuthService } from '../../services/auth.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +25,7 @@ import { StorageService } from '@app/core/services/storage.service';
     MatProgressBarModule,
     MatSnackBarModule
   ],
+  providers: [AuthService, StorageService],
   template: `
     <div class="login-container">
       <h2 class="login-title">Entrar</h2>

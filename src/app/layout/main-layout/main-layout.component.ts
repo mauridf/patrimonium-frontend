@@ -8,8 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
-import { AuthService } from '@app/core/services/auth.service';
-import { StorageService } from '@app/core/services/storage.service';
+import { AuthService } from '../../core/services/auth.service';
+import { StorageService } from '../../core/services/storage.service';
 import { User } from '@app/core/models';
 
 interface NavItem {
@@ -34,6 +34,7 @@ interface NavItem {
     MatMenuModule,
     MatDividerModule
   ],
+  providers: [AuthService, StorageService],
   template: `
     <mat-sidenav-container class="sidenav-container">
       <!-- Sidebar -->

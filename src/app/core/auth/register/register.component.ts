@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { AuthService } from '@app/core/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -24,6 +24,7 @@ import { AuthService } from '@app/core/services/auth.service';
     MatProgressBarModule,
     MatSnackBarModule
   ],
+  providers: [AuthService],
   template: `
     <div class="register-container">
       <h2 class="register-title">Criar Conta</h2>

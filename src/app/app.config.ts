@@ -6,6 +6,7 @@ import { provideEnvironmentNgxMask } from 'ngx-mask';
 
 import { routes } from './app.routes';
 import { jwtInterceptor, errorInterceptor } from '@app/core/interceptors';
+import { AuthService, StorageService } from './core/services';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,5 +20,7 @@ export const appConfig: ApplicationConfig = {
       ])
     ),
     provideEnvironmentNgxMask(), // Máscaras para inputs
+    AuthService,
+    StorageService,
   ],
 };
