@@ -1,0 +1,45 @@
+// Custom Theming for Angular Material
+@use '@angular/material' as mat;
+
+// Define as paletas de cores
+$patrimonium-primary: mat.m2-define-palette(mat.$m2-indigo-palette, 700, 500, 900);
+$patrimonium-accent: mat.m2-define-palette(mat.$m2-amber-palette, 700, 500, 900);
+$patrimonium-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+// Cria o tema
+$patrimonium-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $patrimonium-primary,
+    accent: $patrimonium-accent,
+    warn: $patrimonium-warn,
+  ),
+  typography: mat.m2-define-typography-config(
+    $font-family: 'Roboto, "Helvetica Neue", sans-serif',
+    $headline-1: mat.m2-define-typography-level(32px, 40px, 700),
+    $headline-2: mat.m2-define-typography-level(24px, 32px, 600),
+    $headline-3: mat.m2-define-typography-level(20px, 28px, 600),
+    $body-1: mat.m2-define-typography-level(16px, 24px, 400),
+  ),
+  density: 0,
+));
+
+// Aplica o tema a todos os componentes
+@include mat.all-component-themes($patrimonium-theme);
+
+// Classes de cores personalizadas
+.primary-color {
+  color: mat.m2-get-color-from-palette($patrimonium-primary, 700);
+}
+
+.accent-color {
+  color: mat.m2-get-color-from-palette($patrimonium-accent, 700);
+}
+
+// Background gradiente para o header
+.header-gradient {
+  background: linear-gradient(135deg, 
+    mat.m2-get-color-from-palette($patrimonium-primary, 700),
+    mat.m2-get-color-from-palette($patrimonium-primary, 900)
+  );
+  color: white;
+}

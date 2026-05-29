@@ -5,13 +5,19 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 
 import { routes } from './app.routes';
+import { jwtInterceptor, errorInterceptor } from '@app/core/interceptors';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), // Otimização Angular 20
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimations(),
-    provideHttpClient(),
-    provideEnvironmentNgxMask(),
+    provideHttpClient(
+      withInterceptors([
+        jwtInterceptor,   // Adiciona token JWT
+        errorInterceptor,  // Trata erros 401
+      ])
+    ),
+    provideEnvironmentNgxMask(), // Máscaras para inputs
   ],
 };
