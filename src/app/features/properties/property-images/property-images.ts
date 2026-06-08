@@ -8,6 +8,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { PropertiesService } from '../../../core/services/properties.service';
 import { Property, PropertyImage } from '../../../core/models/property.model';
 import { environment } from '@env/environment.production';
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 @Component({
   selector: 'app-property-images',
@@ -18,8 +19,9 @@ import { environment } from '@env/environment.production';
     MatButtonModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
-  ],
+    MatSnackBarModule,
+    MatProgressBarModule
+],
   template: `
     <h2 mat-dialog-title>Imagens - {{ property.name }}</h2>
     
