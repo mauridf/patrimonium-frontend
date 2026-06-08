@@ -1,8 +1,3 @@
-# 📝 README.md CORRIGIDO
-
-Aqui está o arquivo formatado corretamente:
-
-```markdown
 # 🏠 Patrimonium Frontend
 
 Frontend do sistema de gestão imobiliária Patrimonium.
