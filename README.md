@@ -1,59 +1,74 @@
-# PatrimoniumFrontend
+# 📝 README.md CORRIGIDO
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+Aqui está o arquivo formatado corretamente:
 
-## Development server
+```markdown
+# 🏠 Patrimonium Frontend
 
-To start a local development server, run:
+Frontend do sistema de gestão imobiliária Patrimonium.
 
-```bash
-ng serve
-```
+## 🚀 Tecnologias
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Angular 20** com Standalone Components
+- **Angular Material** para UI
+- **TypeScript** estrito
+- **RxJS** para reatividade
+- **NgxMask** para máscaras de input
 
-## Code scaffolding
+## 📋 Pré-requisitos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js 18+ 
+- npm 9+
+- Angular CLI (`npm install -g @angular/cli`)
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 🔧 Instalação
 
 ```bash
-ng build
+# Clonar repositório
+git clone https://github.com/seu-usuario/patrimonium-frontend.git
+cd patrimonium-frontend
+
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Acesse: `http://localhost:4200`
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📦 Build de Produção
 
 ```bash
-ng test
+npm run build:prod
 ```
 
-## Running end-to-end tests
+Arquivos gerados em: `dist/patrimonium-frontend/browser/`
 
-For end-to-end (e2e) testing, run:
+## 🌐 Deploy
 
-```bash
-ng e2e
+O deploy é feito automaticamente no **Render** via GitHub.
+
+- **URL Produção:** https://patrimonium-frontend.onrender.com
+- **Branch:** `main`
+- **Build Command:** `npm install && npm run build:prod`
+- **Publish Directory:** `dist/patrimonium-frontend/browser`
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/
+│   ├── core/           # Serviços, guards, interceptors
+│   ├── features/       # Funcionalidades (dashboard, persons, properties...)
+│   ├── shared/         # Componentes reutilizáveis, pipes
+│   └── layout/         # Layouts (auth, main)
+├── environments/       # Configurações por ambiente
+└── styles.scss         # Estilos globais
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🔗 API Backend
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **URL:** https://patrimonium-api.onrender.com
+- **Documentação:** https://patrimonium-api.onrender.com/scalar/v1
+```
