@@ -221,7 +221,8 @@ export class TransactionsComponent implements OnInit {
   }
 
   payTransaction(transaction: Transaction): void {
-    if (confirm(`Registrar pagamento de ${transaction.amount | currency:'BRL'}?`)) {
+    const formattedAmount = this.formatCurrency(transaction.amount);
+    if (confirm(`Registrar pagamento de ${formattedAmount}?`)) {
       this.transactionsService.pay(transaction.id).subscribe({
         next: () => {
           this.snackBar.open('Pagamento registrado!', 'OK', { duration: 3000 });
@@ -233,7 +234,8 @@ export class TransactionsComponent implements OnInit {
   }
 
   cancelTransaction(transaction: Transaction): void {
-    if (confirm(`Cancelar transação de ${transaction.amount | currency:'BRL'}?`)) {
+    const formattedAmount = this.formatCurrency(transaction.amount);
+    if (confirm(`Cancelar transação de ${formattedAmount}?`)) {
       this.transactionsService.cancel(transaction.id).subscribe({
         next: () => {
           this.snackBar.open('Transação cancelada!', 'OK', { duration: 3000 });
@@ -242,6 +244,14 @@ export class TransactionsComponent implements OnInit {
         error: () => this.snackBar.open('Erro ao cancelar', 'OK', { duration: 3000 })
       });
     }
+  }
+
+  // Método auxiliar para formatar moeda
+  private formatCurrency(value: number): string {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(value);
   }
 
   getTypeColor(type: string): 'primary' | 'accent' | 'warn' {

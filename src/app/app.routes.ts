@@ -52,7 +52,7 @@ export const routes: Routes = [
       },
       {
         path: 'transactions',
-        loadComponent: () => import('./features/transactions/transactions')
+        loadComponent: () => import('./features/transactions/transactions.component')
           .then(m => m.TransactionsComponent)
       },
       {
